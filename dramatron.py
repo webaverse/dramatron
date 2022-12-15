@@ -1589,8 +1589,8 @@ def fun_generate_title():
 #   generator.rewrite(text_to_parse, level=1)
 #   return text
 
-generated_title = fun_generate_title()
-print(f'Generated title: {generated_title}.')
+# generated_title = fun_generate_title()
+# print(f'Generated title: {generated_title}.')
 
 ########################
 ### Create character ###
@@ -1662,8 +1662,8 @@ def fun_generate_characters():
 # display(textarea_chars)
 
 # Trigger generation for first seed.
-generated_character = fun_generate_characters()
-print(f'Generated character: {generated_character}.')
+# generated_character = fun_generate_characters()
+# print(f'Generated character: {generated_character}.')
 
 #####################
 ### Create scenes ###
@@ -1708,7 +1708,7 @@ def fun_generate_scenes():
 #   return text
 
 # Trigger generation for first seed.
-generated_scenes = fun_generate_scenes()
+# generated_scenes = fun_generate_scenes()
 
 #####################
 ### Create places ###
