@@ -1574,10 +1574,9 @@ story = None
 ####################
 
 # data_title = {"text": "", "text_area": None, "seed": generator.seed - 1}
-title_seed = generator.seed - 1
 
 def fun_generate_title():
-  title_seed = title_seed + 1
+  title_seed = generator.seed - 1
   seed = title_seed + 1
   # seed = 5
   print(f"Generating {seed}...")
@@ -1599,11 +1598,10 @@ print(f'Generated title: {generated_title}.')
 
 # data_chars = {"text": "", "text_area": None, "seed": generator.seed - 1,
 #               "history": GenerationHistory(), "lock": False}
-characters_seed = generator.seed - 1
 
 def fun_generate_characters():
   new_character = ""
-  characters_seed = characters_seed+1
+  characters_seed = generator.seed - 1
   seed = characters_seed
   # data_chars["lock"] = True
   while True:
@@ -1673,10 +1671,9 @@ print(f'Generated character: {generated_character}.')
 
 # data_scenes = {"text": None, "text_area": None, "seed": generator.seed - 1,
 #                "history": GenerationHistory(), "lock": False}
-scenes_seed = generator.seed - 1
 
 def fun_generate_scenes():
-  scenes_seed = scenes_seed+1
+  scenes_seed = generator.seed - 1
   seed = scenes_seed
   # data_scenes["lock"] = True
   generator.step(2, seed=seed)
@@ -1722,11 +1719,10 @@ place_descriptions = {place_name: Place(place_name, '')
                       for place_name in place_names}
 # data_places = {"descriptions": place_descriptions, "text_area": {},
 #                "seed": generator.seed - 1}
-places_seed = generator.seed - 1
 data_places = []
 
 def fun_generate_places():
-  places_seed = places_seed+1
+  places_seed = generator.seed - 1
   seed = places_seed
   # Update existing text areas with a waiting message.
   # Generate all the places.
