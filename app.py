@@ -15,7 +15,7 @@ class DramatronStory(NamedTuple):
   story: str
 
 
-@app.route('/')
+@app.route('/generate_all', methods=['GET'])
 def main():
   story = DramatronStory()
 
@@ -27,6 +27,25 @@ def main():
 
   return story
 
+@app.route('/title', methods=['GET'])
+def title():
+  return dramatron.fun_generate_title()
+
+@app.route('/scenes', methods=['GET'])
+def scenes():
+  return dramatron.fun_generate_scenes()
+
+@app.route('/places', methods=['GET'])
+def places():
+  return dramatron.fun_generate_places()
+
+@app.route('/character', methods=['GET'])
+def character():
+  return dramatron.fun_generate_characters()
+
+@app.route('/story', methods=['GET'])
+def story():
+  return dramatron.render_story()
 
 if __name__ == '__main__':
   app.run(
