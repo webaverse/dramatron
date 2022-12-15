@@ -1770,3 +1770,32 @@ def fun_rewrite_places(place_name, text):
 # Trigger generation for first seed.
 generated_places = fun_generate_places()
 print(f'Generated places: {generated_places}.')
+
+##############
+### Render ###
+##############
+
+def render_story():
+  # Render the story.
+  story = generator.get_story()
+  script_text = render_story(story)
+  print(script_text)
+
+  # Render the prompts.
+  prefix_text = render_prompts(generator.prompts)
+
+  # Render the interventions.
+  edits_text = ''
+  for timestamp in sorted(generator.interventions):
+    edits_text += 'EDIT @ ' + str(timestamp) + '\n'
+    edits_text += generator.interventions[timestamp] + '\n\n\n'
+
+  # # Prepare the filenames for saving the story and prompts.
+  # timestamp_generation = datetime.datetime.now().strftime('%Y_%m_%d-%I_%M_%S_%p')
+  # title_ascii = re.sub('[^0-9a-zA-Z]+', '_',
+  #                     generator.title_str().strip()).lower()
+  # filename_script = f'{title_ascii}_{timestamp_generation}_script.txt'
+  # filename_prefix = f'{title_ascii}_{timestamp_generation}_prefix.txt'
+  # filename_edits = f'{title_ascii}_{timestamp_generation}_edits.txt'
+  # filename_config = f'{title_ascii}_{timestamp_generation}_config.json'
+
